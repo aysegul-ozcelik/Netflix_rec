@@ -1,0 +1,30 @@
+gitdb==4.0.11
+GitPython==3.1.40
+
+importlib-metadata @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_81_20mq0d8/croot/importlib-metadata_1678997090664/work
+install==1.3.5
+
+
+joblib @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_dfriz0qjwt/croot/joblib_1685113297703/work
+matplotlib @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_52jpupryfi/croot/matplotlib-suite_1698692115510/work
+missingno==0.5.2
+numpy==1.26.2
+pandas @ file:///private/var/folders/sy/f16zz6x50xz3113nwtb9bvq00000gp/T/abs_dflcdcqtvf/croot/pandas_1692297394605/work
+plotly==5.18.0
+scikit-learn==1.3.1
+scikit-surprise==1.1.3
+scipy==1.11.4
+seaborn==0.13.0
+sklearn==0.0.post10
+streamlit==1.29.0
+streamlit-camera-input-live==0.2.0
+streamlit-card==1.0.0
+streamlit-embedcode==0.1.2
+streamlit-extras==0.3.6
+streamlit-faker==0.0.3
+streamlit-image-coordinates==0.1.6
+streamlit-keyup==0.2.2
+streamlit-toggle-switch==1.0.2
+streamlit-vertical-slider==2.5.5
+pickle == 3.11.5
+
