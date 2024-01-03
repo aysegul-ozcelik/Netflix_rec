@@ -8,7 +8,7 @@ import base64
 from streamlit_extras.colored_header import colored_header
 from streamlit_extras.app_logo import add_logo
 from PIL import Image
-from utilities import load_css, st_image
+
 from plotly import graph_objects as go
 import plotly.express as px
 import plotly.graph_objects as go
