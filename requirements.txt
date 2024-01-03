@@ -8,3 +8,4 @@ matplotlib==3.7.2
 missingno==0.5.2
 seaborn==0.12.2
 pillow==10.0.1
+streamlit-extras == 0.3.6
