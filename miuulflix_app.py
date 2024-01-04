@@ -320,11 +320,38 @@ elif selected_relationcore == "Dizi":
 
 #tab_recommend.subheader("Miuulflix")
 
+import streamlit as st
+import zipfile
+import os
+import pickle
 
+# ZIP dosyasının yolu
+zip_file_path = "pkl/similarity.zip"
 
+# Çıkartılacak hedef dizin
+extraction_path = "pkl/"
 
+# ZIP dosyasını çıkartma
+with zipfile.ZipFile("pkl/similarity.zip", 'r') as zip_ref:
+    zip_ref.extractall(extraction_path)
 
+# Çıkartılan Pickle dosyasının adı ve yolu
+pickle_file_name = "similarity.pkl"
+pickle_file_path = os.path.join(extraction_path, pickle_file_name)
 
+# Pickle dosyasını okuma
+pickle_file_name = "similarity.pkl"
+pickle_file_path = os.path.join(extraction_path, pickle_file_name)
+
+# Pickle dosyasını okuma
+try:
+    with open(pickle_file_path, 'rb') as pickle_file:
+        data = pickle.load(pickle_file)
+
+except FileNotFoundError:
+    st.error(f"Pickle dosyası bulunamadı: {pickle_file_path}")
+except Exception as e:
+    st.error(f"Hata oluştu: {e}")
 movies_series = pickle.load(open("pkl/movies_list.pkl", 'rb'))
 similarity = pickle.load(open("pkl/similarity.pkl", 'rb'))
 movies_list = movies_series['title'].values
@@ -348,19 +375,3 @@ if tab_recommend.button("Show Recommend"):
         tab_recommend.text(movieseries_name[1])
     with col3:
         tab_recommend.text(movieseries_name[2])
-
-
-
-
-
-
-tab_recommend.markdown("""Yukarıdaki kodlarda, CountVectorizer kullanılarak metin verileri üzerinde vektörleme işlemi gerçekleştirilmiş ve ardından cosine_similarity ile benzerlik skorları hesaplanmış. Bu işlem genellikle metin verilerinin anlamsal benzerliklerini ölçmek için kullanılır.
-
-CountVectorizer, metin verilerini vektörlere dönüştürmek için kullanılan bir yöntemdir. max_features parametresi ile en fazla kaç özelliğin kullanılacağını belirleyebilirsiniz.
-
-cosine_similarity fonksiyonu, vektörler arasındaki kosinüs benzerliğini hesaplar. Bu benzerlik, vektörler arasındaki açıyı ölçer ve benzerlik skorlarını sağlar.
-
-Bu kodlar, bir önceki adımda vektörize edilen metin verileri üzerinde benzerlik hesaplamak için kullanılmış gibi görünüyor. Eğer daha fazla işlem yapmak veya bu benzerlik matrisini kullanarak bir öneri sistemi oluşturmak istiyorsanız, benzerlik matrisini kullanarak ilgili işlemleri gerçekleştirebilirsiniz. Örneğin, belirli bir film veya içerik için en benzer diğer içerikleri bulmak gibi. Bu benzerlik skorlarını kullanarak tavsiye sistemleri geliştirebilirsiniz.
-""")
-
-
